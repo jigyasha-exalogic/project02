@@ -1,0 +1,98 @@
+
+<%= form_for @user do |f|%>
+<fieldset style="margin-left: 400px; margin-right: 300px; border: 0px;">
+  <span><%= @error %></span>
+<table width=125%>
+  <tr>
+    <td colspan="4"><label><h3><b>USER DETAILS</b></h3></label></td>
+  </tr>
+  <tr>
+    <td><%= f.label "First Name "%><font color="red">*</font></td>
+    <td><%= f.text_field :fname, :required => true %>
+    <span style="color:darkgrey;"><%= @user.errors[:fname][0] rescue nil%></span></td>
+    <td><%= f.label "Last Name "%><font color="red">*</font></td>
+    <td><%= f.text_field :lname, :required => true%>
+    <span style="color:darkgrey;"><%= @user.errors[:lanme][0] rescue nil%></span></td>
+  </tr>
+  <tr>
+    <td><%= f.label "Age "%><font color="red">*</font></td>
+    <td><%= f.number_field :age, :required => true, :min => 18%></td>
+    <td><%= f.label "Date of Joining "%><font color="red">*</font></td>
+    <td><%= f.date_field :date_of_joining, :required => true, :max => Date.today %></td>
+  </tr>
+  <tr>
+    <td><%= f.label "Blood Group "%></td>
+    <td><%= f.select :blood_type, [['Blood Group',nil],'AB+','AB-','A+','A-','B+','B-','O+','O-']%></td>
+    <td><%= f.label "Gender "%><font color="red">*</font></td>
+    <td><%= f.select :gender, [['Gender',nil],'Male','Female','Other'], :required => true%></td>
+  </tr>
+  <tr>
+    <td><%= f.label "Salary per annum "%><font color="red">*</font></td>
+    <td><%= f.number_field :salary_per_annum, :required => true, :min => 0%></td>
+    <td><%= f.label "Contact Number "%><font color="red">*</font></td>
+    <td><%= f.text_field :phonenumber, :pattern=>'\d*', :maxlength=>10, :minlength=>10, :required => true %></td>
+  </tr>
+  <tr>
+    <td><%= f.label "Address "%><font color="red">*</font></td>
+    <td><%= f.text_area :address, :rows => 1, :required => true%></td>
+    <td><%= f.label "City "%></td>
+    <td><%= f.text_field :city%>
+    <span style="color:darkgrey;"><%= @user.errors[:city][0] rescue nil%></span></td>
+  </tr>
+  <tr>
+    <td><%= f.label "State "%><font color="red">*</font></td>
+    <td><%= f.select :state,[['State',nil],'Andaman & Nicobar Islands','Andhra Pradesh','Arunachal Pradesh','Assam',
+  'Bihar','Chandigarh','Chhattisgarh','Dadra and Nagar Haveli','Daman and Diu','Delhi','Goa','Gujarat','Haryana',
+  'Himachal Pradesh','Jammu and Kashmir','Jharkhand','Karnataka','Kerala','Ladakh','Lakshadweep','Madhya Pradesh',
+  'Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Puducherry','Punjab','Rajasthan','Sikkim','Tamil Nadu',
+  'Telangana','Tripura','Uttar Pradesh','Uttarakhand','West Bengal'], :required => true%></td>
+  <td><%= f.label "Country "%><font color="red">*</font></td>
+  <td><%= f.select :country, ['India'], :required => true%></td>
+  </tr>
+  <tr>
+    <td><%= f.label "Pincode "%><font color="red">*</font></td>
+    <td><%= f.text_field :pincode, :pattern=>'\d*', :maxlength=>6, :minlength=>6%></td>
+    <td><%= f.label "Notice period(in days)"%></td>
+    <td><%= f.number_field :notice, :min =>0 %></td>
+  </tr>
+  <tr>
+    <td><%= f.label "Emergency Contact Name "%><font color="red">*</font></td>
+    <td><%= f.text_field :emergency_name, :required => true%>
+    <span style="color:darkgrey;"><%= @user.errors[:emergency_name][0] rescue nil%></span></td>
+    <td><%= f.label "Emergency Contact Number "%><font color="red">*</font></td>
+    <td><%= f.text_field :emergency_number, :pattern=>'\d*', :maxlength=>10, :minlength=>10, :required => true %></td>
+  </tr>
+  <tr>
+    <td><%= f.label "Primary Skill "%><font color="red">*</font></td>
+    <td><%= f.text_field :primary_skill, :required => true%></td>
+    <td><%= f.label "Secondary Skill 1"%></td>
+    <td><%= f.text_field :secondary_skill1%></td>
+  </tr>
+  <tr>
+    <td><%= f.label "Secondary Skill 2"%></td>
+    <td><%= f.text_field :secondary_skill2%></td>
+  </tr>
+  <tr>
+    <td colspan="4"><label><h3><b>LOGIN DETAILS</b></h3></label></td>
+  </tr>
+  <tr>
+    <td><%= f.label :email%></td>
+    <td><%= f.email_field :email%>
+    <span style="color:red;"><%= @user.errors[:email][0] rescue nil%></span></td>
+      
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><%= f.label :password%></td>
+    <td><%= f.password_field :password%></td>
+    <td><%= f.label :"Confirm Password"%></td>
+    <td><%= f.password_field :password_confirmation%></td>
+  </tr>
+</table>
+<br>
+<%= link_to 'Back to Home', users_path, :class => "links" %>
+<%= f.submit 'Submit', :class => "links" %><br/><br/>
+</fieldset>
+<% end%>
