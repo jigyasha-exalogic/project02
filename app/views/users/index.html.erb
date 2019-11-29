@@ -13,6 +13,7 @@
 
 <div class="main1">
   <h3>Employee List</h3>
+  <h5>Number of Employees : <%= @users.count-1 %> </h5>
 <% @users.each do |f| %>
   <% unless f.role == "admin"%>
     <a href="#" style="text-decoration:none; color:black;">

@@ -46,23 +46,23 @@
   'Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Puducherry','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttar Pradesh','Uttarakhand','West Bengal'], :required => true%></td>
   </tr>
   <tr>
-    <td><%= f.label "Pincode "%><font color="red">*</font></td>
+    <td><%= f.label "Pincode "%></td>
     <td><%= f.text_field :pincode, :pattern=>'\d*', :maxlength=>6, :minlength=>6%></td>
-    <td><%= f.label "Country "%><font color="red">*</font></td>
-    <td><%= f.select :country, ['India'], :required => true%></td>
+    <td><%= f.label "Country "%></td>
+    <td><%= f.select :country, ['India']%></td>
   </tr>
     <td colspan="4"><label><h3><b>EMERGENCY CONTACT DETAILS</b></h3></label></td>
    <tr>
-    <td><%= f.label "Contact Name "%></td>
-    <td><%= f.text_field :emergency_name, :required => true%>
+    <td><%= f.label "Contact Name "%><font color="red">*</font></td>
+    <td><%= f.text_field :emergency_name%>
     <span style="color:black;"><%= @user.errors[:emergency_name][0] rescue nil%></span></td>
-    <td><%= f.label "Contact Number "%></td>
+    <td><%= f.label "Contact Number "%><font color="red">*</font></td>
     <td><%= f.text_field :emergency_number, :pattern=>'\d*', :maxlength=>10, :minlength=>10, :required => true %></td>
   </tr>
      <td colspan="4"><label><h3><b>PROFESSIONAL DETAILS</b></h3></label></td>
   <tr>
      <td><%= f.label "Salary per annum "%><font color="red">*</font></td>
-     <td><%= f.number_field :salary_per_annum, :required => true, :min => 0%></td>
+     <td><%= f.number_field :salary_per_annum, :required => true, :min => 1%></td>
      <td><%= f.label "Notice period(in days)"%></td>
      <td><%= f.number_field :notice, :min =>0 %></td>
   </tr>
