@@ -26,7 +26,7 @@
 		<% end %>
   </div>
   <% if session[:user_type]=='admin'%>
-    <legend><h2>Welcome Admin</h2></legend>
+    <legend><h2><%= @user.fname%> <%= @user.lname%>'s Details</h2></legend>
   <% else %>
   	<legend><h2>Welcome <%= @user.fname%></h2></legend>
   	<%end%>
