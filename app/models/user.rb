@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :phonenumber, presence:true
   validates :fname, presence:true, format: {with: /\A[a-zA-Z]+(?: [a-zA-Z]+)?\z/}
   validates :lname, presence:true, format: {with: /\A[a-zA-Z]+(?: [a-zA-Z]+)?\z/}
-  validates :emergency_name, presence:true, format: {with: /\A[a-zA-Z]+(?: [a-zA-Z]+)?\z/}
+  validates :emergency_name, format: {with: /\A[a-zA-Z]+(?: [a-zA-Z]+)?\z/}
   validates :city, presence:true, format: {with: /\A[a-zA-Z]+(?: [a-zA-Z]+)?\z/}
 
 end

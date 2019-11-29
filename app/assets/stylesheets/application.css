@@ -1,6 +1,6 @@
 body {
   font-family: "Lato", sans-serif;
-  background: linear-gradient(to right, #F2EFE5, #EDC66C);
+  background: #F3F4E3;
 }
 
 .sidenav {
@@ -10,7 +10,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background: linear-gradient(to left, #D4C0AB, #F2EFE5);
+  background: linear-gradient(to left, #C7C6BA, #C7C7C3);
   overflow-x: hidden;
   padding-top: 20px;
 }

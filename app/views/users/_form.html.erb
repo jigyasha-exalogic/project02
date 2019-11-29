@@ -9,10 +9,10 @@
   <tr>
     <td><%= f.label "First Name "%><font color="red">*</font></td>
     <td><%= f.text_field :fname, :required => true %>
-    <span style="color:darkgrey;"><%= @user.errors[:fname][0] rescue nil%></span></td>
+    <span style="color:black;"><%= @user.errors[:fname][0] rescue nil%></span></td>
     <td><%= f.label "Last Name "%><font color="red">*</font></td>
     <td><%= f.text_field :lname, :required => true%>
-    <span style="color:darkgrey;"><%= @user.errors[:lanme][0] rescue nil%></span></td>
+    <span style="color:black;"><%= @user.errors[:lanme][0] rescue nil%></span></td>
   </tr>
   <tr>
     <td><%= f.label "Age "%><font color="red">*</font></td>
@@ -35,9 +35,9 @@
   <tr>
     <td><%= f.label "Address "%><font color="red">*</font></td>
     <td><%= f.text_area :address, :rows => 1, :required => true%></td>
-    <td><%= f.label "City "%></td>
+    <td><%= f.label "City "%><font color="red">*</font></td>
     <td><%= f.text_field :city%>
-    <span style="color:darkgrey;"><%= @user.errors[:city][0] rescue nil%></span></td>
+    <span style="color:black;"><%= @user.errors[:city][0] rescue nil%></span></td>
   </tr>
   <tr>
     <td><%= f.label "State "%><font color="red">*</font></td>
@@ -56,10 +56,10 @@
     <td><%= f.number_field :notice, :min =>0 %></td>
   </tr>
   <tr>
-    <td><%= f.label "Emergency Contact Name "%><font color="red">*</font></td>
+    <td><%= f.label "Emergency Contact Name "%></td>
     <td><%= f.text_field :emergency_name, :required => true%>
-    <span style="color:darkgrey;"><%= @user.errors[:emergency_name][0] rescue nil%></span></td>
-    <td><%= f.label "Emergency Contact Number "%><font color="red">*</font></td>
+    <span style="color:black;"><%= @user.errors[:emergency_name][0] rescue nil%></span></td>
+    <td><%= f.label "Emergency Contact Number "%></td>
     <td><%= f.text_field :emergency_number, :pattern=>'\d*', :maxlength=>10, :minlength=>10, :required => true %></td>
   </tr>
   <tr>
@@ -76,7 +76,7 @@
     <td colspan="4"><label><h3><b>LOGIN DETAILS</b></h3></label></td>
   </tr>
   <tr>
-    <td><%= f.label :email%></td>
+    <td><%= f.label "Email "%><font color="red">*</font></td>
     <td><%= f.email_field :email%>
     <span style="color:red;"><%= @user.errors[:email][0] rescue nil%></span></td>
       
@@ -85,9 +85,9 @@
     <td></td>
   </tr>
   <tr>
-    <td><%= f.label :password%></td>
+    <td><%= f.label "Password"%></td>
     <td><%= f.password_field :password%></td>
-    <td><%= f.label :"Confirm Password"%></td>
+    <td><%= f.label "Confirm Password"%></td>
     <td><%= f.password_field :password_confirmation%></td>
   </tr>
 </table>
